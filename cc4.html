@@ -1,0 +1,41 @@
+Go to:https://console.cloud.google.com
+which is google cloud console(you will have to sign in)
+at the top bar next to google cloud logo go to dropdown that says:select a project
+A form will open click on new project name it cclab-webapp
+Select the porject id once project is created
+then go to cloud shell terminal
+and now put this(make sure your inside the correct project):
+gcloud config set project cclab-webapp
+nano main.py
+from flask import Flask
+app = Flask(__name__)
+
+@app.route('/')
+def hello():
+    return "Hello, Welcome to bmsit!"  # You can change this text
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=8080)
+Press Ctrl + O → save
+
+Press Enter
+
+Press Ctrl + X → exit
+nano requirements.txt
+Flask==2.3.3
+do same thing
+nano app.yaml
+runtime: python39
+entrypoint: python main.py
+
+handlers:
+- url: /.*
+  script: auto
+
+do same thing
+python3 -m venv env
+source env/bin/activate
+pip install -r requirements.txt
+python main.py
+Running on http://0.0.0.0:8080
+go to link: Welcome to BMSIT!
