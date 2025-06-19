@@ -1,0 +1,84 @@
+Go to ubuntu terminal
+cd ~/Desktop
+echo "Hello from vm1" > testfile.txt
+ls
+testfile.txt
+cat testfile.txt
+you should see:
+Hello from vm1
+
+now open one more terminal
+cd ~/Desktop
+ls
+cat testfile.txt
+you should see same message again
+
+In write up write this:
+Aim:
+To transfer a file from one virtual machine to another using the scp command in Ubuntu.
+
+Tools Required:
+VMware Workstation
+
+Two Ubuntu virtual machines
+
+Terminal access to both VMs
+
+Working network connection (NAT or Bridged)
+Procedure:
+Start both Ubuntu virtual machines in VMware.
+(Example: vm1 and vm2)
+
+On vm2 (receiver VM):
+
+Open terminal
+
+Install SSH server (if not installed)
+Get the IP address of vm2
+
+On vm1 (sender VM):
+
+Open terminal
+
+Create a test file:
+echo "This file is from vm1" > testfile.txt
+Use scp command to send the file to vm2
+n vm2:
+
+Open terminal
+
+Navigate to the directory and check the file
+ls  
+cat testfile.txt
+Result:
+The file was successfully transferred from one virtual machine to another using the scp command over SSH.
+
+or if through open nebula:
+Aim:
+To transfer a file from one virtual machine to another using OpenNebula.
+
+Tools Required:
+OpenNebula platform (running on localhost:9869)
+
+Two virtual machines created and managed by OpenNebula
+
+Web browser
+
+SSH access (optional for file transfer)
+
+Procedure:
+Open a web browser
+Login to OpenNebula with:
+
+Username: oneadmin
+
+Password: opennebula
+
+Launch or create two VMs
+Note the IP addresses of both VM
+Use the OpenNebula context or SSH to transfer the file
+Using SSH from one VM to another
+echo "Hello from vm1" > testfile.txt
+On vm2, verify the file:
+ls
+cat testfile.txt
