@@ -1,0 +1,62 @@
+Steps:
+Download google coud SDK:
+This link: https://cloud.google.com/sdk/docs/install
+Hwne you go to this link under windows you will see a set of commands, 
+You have to copy paste that command in powershell.
+That commands are:
+(New-Object Net.WebClient).DownloadFile("https://dl.google.com/dl/cloudsdk/channels/rapid/GoogleCloudSDKInstaller.exe", "$env:Temp\GoogleCloudSDKInstaller.exe")
+
+& $env:Temp\GoogleCloudSDKInstaller.exe
+
+Then after this it will take to page enter sign in do all that
+Now after all tis in that erminal that already opened or open powershell or cmd and put:
+gcloud init
+
+then if it asks something do that
+and then run:gcloud app create
+you will have to choose your loaction put 6
+then error will come for billing details ignore
+
+Now inf ile explorer creat folder:my_appengine_lab
+then in that in main.py:
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return """
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Hello App Engine</title>
+    </head>
+    <body>
+        <h2>Hello App Engine!</h2>
+        <p>Available Servlets:</p>
+        <a href="/helloworld">HelloWorld</a>
+    </body>
+    </html>
+    """
+
+@app.route('/helloworld')
+def hello():
+    return "Hello, world"
+
+if __name__ == '__main__':
+    app.run(port=8888)
+
+and in app.yaml:
+runtime: python39
+entrypoint: python main.py
+
+then after this open vs code terminal:
+pip install flask
+then put:
+python main.py
+You will get a link, go to that link:
+Hello App Engine!
+Available Servlets:
+Hello World
+
+When u click on hello world it will go to a sperate page with only hello world
