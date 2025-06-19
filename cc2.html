@@ -1,0 +1,21 @@
+Open VM Ware or oracle virtual boc and launch oropen ubuntu
+open ubuntu terminal:
+and run this:
+sudo apt update
+sudo apt install build-essential
+
+in text editor: 
+#include <stdio.h>
+
+int main() {
+    printf("Hello, world!\n");
+    return 0;
+}
+save this as hello.c(save it in a know folder like desktop or document)
+
+  then go to ubuntu terminal: (put ls to see if hello.c is in your directory)
+  cd ~/Desktop          # if you saved it on Desktop
+gcc hello.c -o hello
+./hello
+
+  Output: Hello world!
