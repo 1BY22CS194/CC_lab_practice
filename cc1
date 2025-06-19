@@ -1,0 +1,19 @@
+go to virtual box on google
+download oracle vm virtual box->window hosts
+once download finished opeb bext->nexr->yes
+  done you should see it in main menu
+
+after that download ubunt
+ubuntu desktop for windows
+once download, click on it and in download you will see it as an .iso file
+
+now open oracle virtaul box
+click new
+nme->Ubuntu
+  type->Linux
+  version->ubuntu 64 bit
+  and if unattended install is there for password and reset passowrd puut ubuntu1234
+
+next click okay->finish
+  installation should start
+ubunut will open
